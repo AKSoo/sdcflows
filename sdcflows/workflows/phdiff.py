@@ -117,8 +117,7 @@ and further improvements in HCP Pipelines [@hcppipelines].
     workflow.connect([
         (inputnode, split, [('phasediff', 'phasediff')]),
         (inputnode, magnitude_wf, [('magnitude', 'inputnode.magnitude')]),
-        (magnitude_wf, prelude, [('outputnode.fmap_ref', 'magnitude_file'),
-                                 ('outputnode.fmap_mask', 'mask_file')]),
+        (magnitude_wf, prelude, [('outputnode.fmap_ref', 'magnitude_file')]),
         (split, phmap2rads, [('map_file', 'in_file')]),
         (phmap2rads, calc_phdiff, [('out_file', 'in_phases')]),
         (split, calc_phdiff, [('meta', 'in_meta')]),
